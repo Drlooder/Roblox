@@ -8,6 +8,6 @@ Just add the script to a *ModuleScript* in *ServerScriptService* and you great t
 4. have cache for performance reasons
 5. applying update and support table merage
 
-# to be noted
+# Notes
 1. update edit and create
 2. set changes values of a specific key, so if you want to update and still have the old data use UpdateData function.
