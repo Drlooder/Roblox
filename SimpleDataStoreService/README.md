@@ -9,5 +9,5 @@ Just add the script to a *ModuleScript* in *ServerScriptService* and you great t
 5. applying update and support table merage
 
 # Notes
-1. update edit and create
-2. set changes values of a specific key, so if you want to update and still have the old data use UpdateData function.
+1. *UpdateData* edit and create. also support table merage, so it will work in any saving system
+2. *SetData* change values of a specific key, so if you want to set data and still have the old data use *UpdateData* function.
