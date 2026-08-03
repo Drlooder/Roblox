@@ -143,5 +143,26 @@ function module.HasData(dataStoreName, key)
 	return false
 end
 
+function module.GetAllData(DataStoreName)
+	DataStoreName = string.upper(DataStoreName)
+	local DataStoreObj = module.GetDataStoreObject(DataStoreName)
+
+	local success, pages = pcall(function() return DataStoreObj:ListKeysAsync() end)
+	local Data = {}
+
+	if success then
+		repeat
+			for _, keyData in ipairs(pages:GetCurrentPage()) do
+				local key = keyData.KeyName
+				local _, value = pcall(function() return DataStoreObj:GetAsync(key) end)
+				Data[key] = value
+			end
+			pages:AdvanceToNextPageAsync()
+		until pages.IsFinished
+	end
+
+	return Data
+end
+
 
 return module
